@@ -135,6 +135,10 @@
   "presets": {
     "Default": {
       "sections": {
+        "featured-products": {
+          "type": "collection",
+          "settings": {}
+        },
         "header": {
           "type": "header",
           "settings": {}

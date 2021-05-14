@@ -1,0 +1,51 @@
+<link type="text/css" href="{{ 'featuredProducts.scss.css' | asset_url }}" rel="stylesheet">
+<div id="featuredProducts">
+
+    <div class="title">
+        <h1> {{ section.settings.title-text }} </h1>
+    </div>
+
+    <div class="products">
+        <ul class="featured-products-list">
+            {% for product in collections[section.settings.chosen].products %}
+                {% if forloop.index0 > 3 %}
+                    {% break %}
+                {% else %}
+                    <a href="{{ product.url }}">
+                        <li class="featured-list-item">
+                            <span class="featured-item-title">{{product.title}}</span>
+                            <img src="{{ product| img_url}}" alt="{{ product.description }}" class="featured-item-img">
+                            Price: {{ product.price }}
+                        </li>
+                    </a>
+                {% endif %}    
+            {% endfor %}
+        </ul>    
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Featured Products",
+    "settings": [
+        {
+            "id": "title-text",
+            "type": "text",
+            "label": "Heading",
+            "default": "Title"
+        },
+        {
+            "type": "collection",
+            "id": "chosen",
+            "label": "Please choose a collection to feature.",
+            "info": "Only the first 4 products will be displayed"   
+        }
+    ],
+    "presets": [{
+        "name": "Featured Products",
+        "category": "Text/Image"
+    }]
+  }
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,39 @@
+.featuredProducts {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.featured-list-item {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.featured-list-item > * {
+    display: block;
+}
+
+.featured-item-title {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.featured-item-img {
+    margin: auto;
+}
+
+.featured-products-list {
+    text-align: center;
+}
+
+@media (min-width:1025px) {
+    .featured-list-item {
+        width: 23%;
+    }
+}
