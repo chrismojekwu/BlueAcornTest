@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.featured-list-item > * {
+.featured-list-item > *, .featured-item-img {
     display: block;
 }
 
@@ -31,6 +31,34 @@
 .featured-products-list {
     text-align: center;
 }
+
+.featured-item-button {
+    margin: auto;
+    width: 45%;
+    line-height: 28px;
+    border: 2px solid #8441FD;
+    background-color: #8441FD;
+    color: #FFFFFF;
+}
+
+.featured-item-button:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.featured-item-button--tab {
+    position: relative;
+    left: 21%;
+    bottom: 10px;
+    margin: auto;
+    width: 5%;
+    height: 10px;
+    background: linear-gradient(135deg, #5B01FD 50%, #FFFFFF 50%);
+}
+
+
+
+
 
 @media (min-width:1025px) {
     .featured-list-item {

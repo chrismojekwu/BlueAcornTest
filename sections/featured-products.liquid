@@ -1,4 +1,5 @@
 <link type="text/css" href="{{ 'featuredProducts.scss.css' | asset_url }}" rel="stylesheet">
+
 <div id="featuredProducts">
 
     <div class="title">
@@ -15,9 +16,11 @@
                         <li class="featured-list-item">
                             <span class="featured-item-title">{{product.title}}</span>
                             <img src="{{ product| img_url}}" alt="{{ product.description }}" class="featured-item-img">
-                            Price: {{ product.price }}
-                        </li>
                     </a>
+                            Price: {{ product.price }}
+                            <button class="featured-item-button">Add to Cart</button>
+                            <div class="featured-item-button--tab"></div>
+                        </li>
                 {% endif %}    
             {% endfor %}
         </ul>    
@@ -46,6 +49,3 @@
     }]
   }
 {% endschema %}
-
-{% javascript %}
-{% endjavascript %}
