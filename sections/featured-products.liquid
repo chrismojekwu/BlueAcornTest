@@ -1,5 +1,28 @@
 <link type="text/css" href="{{ 'featuredProducts.scss.css' | asset_url }}" rel="stylesheet">
+<script>
+    const addToCart = (itemId) => {
 
+        const body = {
+            items: [
+                {
+                    quantity: 1,
+                    id: itemId
+                }
+            ]
+        };
+
+        return fetch("/cart/add.js", {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(res => res.json()).then(res => {
+            console.log(res);
+        })
+    
+    };
+</script>
 <div id="featuredProducts">
 
     <div class="title">
@@ -18,7 +41,7 @@
                             <img src="{{ product| img_url}}" alt="{{ product.description }}" class="featured-item-img">
                     </a>
                             Price: {{ product.price }}
-                            <button class="featured-item-button">Add to Cart</button>
+                            <button class="featured-item-button" onclick="addToCart({{ product.variants[0].id }})">Add to Cart</button>
                             <div class="featured-item-button--tab"></div>
                         </li>
                 {% endif %}    
