@@ -35,15 +35,15 @@
                 {% if forloop.index0 > 3 %}
                     {% break %}
                 {% else %}
-                    <a href="{{ product.url }}">
-                        <li class="featured-list-item">
+                    <li class="featured-list-item">
+                        <a href="{{ product.url }}">
                             <span class="featured-item-title">{{product.title}}</span>
                             <img src="{{ product| img_url}}" alt="{{ product.description }}" class="featured-item-img">
-                    </a>
+                        </a>
                             Price: {{ product.price }}
                             <button class="featured-item-button" onclick="addToCart({{ product.variants[0].id }})">Add to Cart</button>
                             <div class="featured-item-button--tab"></div>
-                        </li>
+                    </li>
                 {% endif %}    
             {% endfor %}
         </ul>    
