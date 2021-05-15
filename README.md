@@ -6,3 +6,6 @@ This test was pretty challenging but I feel a lot better after completion. The i
 Shop Link - https://blueacorntest.myshopify.com/
 
 Shop Password - sadray
+
+
+** I wanted to make some improvements so I started a new branch called updates that has changes from what I originally submitted.
