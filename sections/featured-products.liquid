@@ -1,28 +1,6 @@
+{{ 'cartbutton.js' | asset_url | script_tag }}
 <link type="text/css" href="{{ 'featuredProducts.scss.css' | asset_url }}" rel="stylesheet">
-<script>
-    const addToCart = (itemId) => {
 
-        const body = {
-            items: [
-                {
-                    quantity: 1,
-                    id: itemId
-                }
-            ]
-        };
-
-        return fetch("/cart/add.js", {
-            method: 'POST',
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(body)
-        }).then(res => res.json()).then(res => {
-            console.log(res);
-        })
-    
-    };
-</script>
 <div id="featuredProducts">
 
     <div class="title">
